@@ -22,13 +22,14 @@ import java.util.ArrayList;
  */
 public class CustomerController {
     public static int addCustomer(Customer customer) throws ClassNotFoundException, SQLException {
-        String sql = "Insert into Customer values(?,?,?,?)";
+        String sql = "Insert into Customer values(?,?,?,?,?)";
         Connection conn = DBConnection.getDBConnection().getConnection();
         PreparedStatement stm = conn.prepareStatement(sql);
         stm.setObject(1, customer.getCustomer_Id());
         stm.setObject(2, customer.getCustomer_Name());
         stm.setObject(3, customer.getCustomer_TpNo());
         stm.setObject(4, customer.getCustomer_Address());
+        stm.setObject(5, customer.getCustomer_Email());
         
         return  stm.executeUpdate();
         
@@ -40,7 +41,7 @@ public class CustomerController {
         stm.setObject(1, customer_Id);
         ResultSet rst=stm.executeQuery();
         if(rst.next()){
-            Customer c=new Customer(rst.getString(1),rst.getString(2),rst.getInt(3), rst.getString(4));
+            Customer c=new Customer(rst.getString(1),rst.getString(2),rst.getInt(3), rst.getString(4), rst.getString(5));
             return c;
         }
         return null;
@@ -52,7 +53,8 @@ public class CustomerController {
         stm.setObject(1, customer.getCustomer_Id());
         stm.setObject(2, customer.getCustomer_Name());
         stm.setObject(3, customer.getCustomer_TpNo());
-        stm.setObject(4, customer.getCustomer_Address());   
+        stm.setObject(4, customer.getCustomer_Address());
+        stm.setObject(5, customer.getCustomer_Email());
     return  stm.executeUpdate();
     }
     public static int deleteCustomer(String customer_Id) throws ClassNotFoundException, SQLException {
@@ -75,7 +77,7 @@ public class CustomerController {
         ArrayList<Customer>customerList=new ArrayList<>();
         while(rst.next()){
             Customer customer;
-            customer = new Customer(rst.getString(1),rst.getString(2),rst.getInt(3),rst.getString(4));
+            customer = new Customer(rst.getString(1),rst.getString(2),rst.getInt(3),rst.getString(4),rst.getString(5));
             customerList.add(customer);
         }
         return customerList;
