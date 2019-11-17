@@ -25,22 +25,27 @@
       </Text>
       <Label layoutY="594.0" opacity="0.9" prefHeight="106.0" prefWidth="1201.0" style="-fx-background-color: #1b76ff;" />
       <Label layoutX="36.0" layoutY="166.0" opacity="0.9" prefHeight="127.0" prefWidth="1112.0" style="-fx-background-color: #1b76ff;" />
-      <JFXTextField fx:id="txtCID" focusColor="WHITE" labelFloat="true" layoutX="91.0" layoutY="197.0" onAction="#searchCustomer" prefHeight="33.0" prefWidth="64.0" promptText="CID" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtCID" focusColor="WHITE" labelFloat="true" layoutX="75.0" layoutY="197.0" onAction="#searchCustomer" prefHeight="33.0" prefWidth="64.0" promptText="CID" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtName" focusColor="WHITE" labelFloat="true" layoutX="232.0" layoutY="197.0" onKeyTyped="#validationName" promptText="Name" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtName" focusColor="WHITE" labelFloat="true" layoutX="170.0" layoutY="197.0" prefWidth="170.0" onKeyTyped="#validationName" promptText="Name" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtTPNo" focusColor="WHITE" labelFloat="true" layoutX="500.0" layoutY="197.0" promptText="Phone Number" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtTPNo" focusColor="WHITE" labelFloat="true" layoutX="400.0" layoutY="197.0" prefWidth="150.0" promptText="Phone Number" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtAddress" focusColor="WHITE" labelFloat="true" layoutX="799.0" layoutY="197.0" prefHeight="33.0" prefWidth="239.0" promptText="Address" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtAddress" focusColor="WHITE" labelFloat="true" layoutX="590.0" layoutY="197.0" prefHeight="33.0" prefWidth="239.0" promptText="Address" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+       <JFXTextField fx:id="txtEmail" focusColor="WHITE" labelFloat="true" layoutX="850.0" layoutY="197.0" prefHeight="33.0" prefWidth="239.0" promptText="Email" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
          <font>
             <Font size="16.0" />
          </font>
@@ -70,7 +75,8 @@
             <TableColumn fx:id="tblCID" prefWidth="75.0" text="CID" />
           <TableColumn fx:id="tblName" prefWidth="207.0" text="Name" />
           <TableColumn fx:id="tblTpNo" prefWidth="177.0" text="Phone Number" />
-            <TableColumn fx:id="tblAddress" prefWidth="636.0" text="Address" />
+            <TableColumn fx:id="tblAddress" prefWidth="250.0" text="Address" />
+             <TableColumn fx:id="tblEmail" prefWidth="500.0" text="Email" />
         </columns>
       </TableView>
       <JFXButton fx:id="btnLogOut" buttonType="RAISED" layoutX="442.0" layoutY="628.0" onAction="#btnLogOut" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: #f22613;" text="Log Out" textFill="WHITE">
@@ -83,22 +89,22 @@
             <Font name="Calibri Bold" size="17.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="682.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="370.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../image/Phone_100px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="413.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="150.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../image/User_50px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="1044.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="1120.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../image/Home_100px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="167.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="20.0" layoutX="50.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../image/Electronic%20Identity%20Card_100px.png" />
          </image>
