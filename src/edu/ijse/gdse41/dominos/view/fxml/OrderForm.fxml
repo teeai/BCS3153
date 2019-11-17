@@ -32,6 +32,10 @@
             <String fx:value="jfx-date-picker" />
             <String fx:value="date-picker" />
          </styleClass></JFXDatePicker>
+         <JFXTextField fx:id="txtEmail" focusColor="WHITE" labelFloat="true" layoutX="700.0" layoutY="84.0" prefHeight="28.0" prefWidth="160.0" promptText="Email" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;">
+         <styleClass>
+            <Font size="50.0" />
+         </styleClass></JFXTextField>
       <JFXTextField fx:id="txtCID" focusColor="WHITE" labelFloat="true" layoutX="99.0" layoutY="170.0" onAction="#searchCustomer" prefHeight="35.0" prefWidth="61.0" promptText="CID" style="-fx-prompt-text-fill: #ffffff; -fx-text-inner-color: #ffffff;" unFocusColor="WHITE">
          <font>
             <Font size="18.0" />
