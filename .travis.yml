@@ -10,9 +10,6 @@ addons:
   apt:
     packages:
       - ant
-
-before_install:
-  - cd java
   
 script:
   - ant test
@@ -20,3 +17,11 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: Final_Code
