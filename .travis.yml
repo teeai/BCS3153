@@ -1,15 +1,17 @@
 language: java
 
-
 jdk:
  - oraclejdk12
+ 
+ cache: yarn
+ 
+ install: 
+ -yarn install
   
 script:
-  - ant test
+  - yarn test
+  - yarn run build
  
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
   
 deploy:
   provider: pages
