@@ -1,7 +1,8 @@
 language: java
 install: ant deps
 
-ant test
+jdk:
+ - oraclejdk9
 
 dist: xenial
 language: java
@@ -10,32 +11,12 @@ addons:
     packages:
       - ant
 
-jdk:
-  - oraclejdk8
-  - oraclejdk9
-  - openjdk8
+before_install:
+  - cd java
   
 script:
-  - jdk_switcher use oraclejdk8
-  - # do stuff with Java 8
-  - jdk_switcher use openjdk8
-  - # do stuff with open Java 8
-  
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
-      
-jdk:
-  - oraclejdk8
-  - oraclejdk11
-  - openjdk10
-  - openjdk11
-  
-jdk: openjdk10
-script:
-  - jdk_switcher use openjdk10
-  - # do stuff with OpenJDK 10
-  - export JAVA_HOME=$HOME/openjdk11
-  - $TRAVIS_BUILD_DIR/install-jdk.sh --install openjdk11 --target $JAVA_HOME
-  - # do stuff with open OpenJDK 11
+  - ant test
+ 
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
