@@ -7,10 +7,12 @@ jdk:
  
  install: 
  -yarn install
+ -ant deps
   
 script:
   - yarn test
   - yarn run build
+  -ant test
  
   
 deploy:
