@@ -12,7 +12,7 @@ jdk:
 script:
   - yarn test
   - yarn run build
-  -ant 
+  - ant  test
  
   
 deploy:
