@@ -11,15 +11,17 @@ public class Customer {
     private String customer_Name;
     private int customer_TpNo;
     private String customer_Address;
+    private String customer_Email;
 
     public Customer() {
     }
 
-    public Customer(String customer_Id, String customer_Name, int customer_TpNo, String customer_Address) {
+    public Customer(String customer_Id, String customer_Name, int customer_TpNo, String customer_Address, String customer_Email) {
         this.customer_Id = customer_Id;
         this.customer_Name = customer_Name;
         this.customer_TpNo = customer_TpNo;
         this.customer_Address = customer_Address;
+        this.customer_Email = customer_Email;
     }
 
     /**
@@ -76,6 +78,20 @@ public class Customer {
      */
     public void setCustomer_Address(String customer_Address) {
         this.customer_Address = customer_Address;
+    }
+    
+     /**
+     * @return the customer_Id
+     */
+    public String getCustomer_Email() {
+        return customer_Email;
+    }
+
+    /**
+     * @param customer_Email the customer_Id to set
+     */
+    public void setCustomer_Email(String customer_Email) {
+        this.customer_Email = customer_Email;
     }
     
     

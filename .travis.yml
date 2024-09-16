@@ -1,0 +1,24 @@
+language: java
+
+jdk:
+ - oraclejdk12
+ 
+ cache: yarn
+ 
+ install: 
+ -yarn install
+ -ant deps
+  
+script:
+  - yarn test
+  - yarn run build
+  - ant  test
+ 
+  
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: Final_Code

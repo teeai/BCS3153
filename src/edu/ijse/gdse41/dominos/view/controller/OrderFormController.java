@@ -52,6 +52,9 @@ public class OrderFormController implements Initializable {
     private JFXTextField txtAddress;
     
     @FXML
+    private JFXTextField txtEmail;
+    
+    @FXML
     private JFXButton btnSearch;
     
     @FXML
@@ -192,8 +195,9 @@ public class OrderFormController implements Initializable {
             String customer_Name = txtName.getText();
             int customer_TpNo = Integer.parseInt(txtTPNo.getText());
             String customer_Address = txtAddress.getText();
+            String customer_Email = txtEmail.getText();
 
-            Customer c = new Customer(customer_Id, customer_Name, customer_TpNo, customer_Address);
+            Customer c = new Customer(customer_Id, customer_Name, customer_TpNo, customer_Address, customer_Email);
             int i = CustomerController.addCustomer(c);
             if (i > 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -236,6 +240,7 @@ public class OrderFormController implements Initializable {
                 txtName.setText(c.getCustomer_Name());
                 txtTPNo.setText(c.getCustomer_TpNo() + "");
                 txtAddress.setText(c.getCustomer_Address());
+                txtEmail.setText(c.getCustomer_Email());
 
                 txtICode.requestFocus();
                 

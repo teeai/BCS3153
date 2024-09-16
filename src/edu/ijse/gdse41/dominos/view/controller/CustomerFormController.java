@@ -60,6 +60,8 @@ public class CustomerFormController implements Initializable {
     @FXML
     private TableColumn tblAddress;
     @FXML
+    private TableColumn tblEmail;
+    @FXML
     private JFXButton btnLogOut;
     @FXML
     private JFXButton btnMainMenu;
@@ -67,6 +69,8 @@ public class CustomerFormController implements Initializable {
     private JFXTextField txtCID;
     @FXML
     private AnchorPane rootCustomer;
+    @FXML
+    private JFXTextField txtEmail;
 
     @FXML
     private JFXButton btnPrintCustomers;
@@ -83,6 +87,7 @@ public class CustomerFormController implements Initializable {
             tblName.setCellValueFactory(new PropertyValueFactory<CustomerTableModel, String>("customer_Name"));
             tblTpNo.setCellValueFactory(new PropertyValueFactory<CustomerTableModel, Integer>("customer_TpNo"));
             tblAddress.setCellValueFactory(new PropertyValueFactory<CustomerTableModel, String>("customer_Address"));
+            tblEmail.setCellValueFactory(new PropertyValueFactory<CustomerTableModel, String>("customer_Email"));
 
             tblCustomer.setItems(data);
             ArrayList<Customer> customers = null;
@@ -93,6 +98,7 @@ public class CustomerFormController implements Initializable {
                 ctm.setCustomer_Name(customer.getCustomer_Name());
                 ctm.setCustomer_TpNo(customer.getCustomer_TpNo());
                 ctm.setCustomer_Address(customer.getCustomer_Address());
+                ctm.setCustomer_Email(customer.getCustomer_Email());
 
                 data.add(ctm);
             }
@@ -114,8 +120,9 @@ public class CustomerFormController implements Initializable {
             String customer_Name = txtName.getText();
             int customer_TpNo = Integer.parseInt(txtTPNo.getText());
             String customer_Address = txtAddress.getText();
+            String customer_Email = txtEmail.getText();
 
-            Customer c = new Customer(customer_Id, customer_Name, customer_TpNo, customer_Address);
+            Customer c = new Customer(customer_Id, customer_Name, customer_TpNo, customer_Address, customer_Email);
             int i = CustomerController.addCustomer(c);
             if (i > 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -195,6 +202,7 @@ public class CustomerFormController implements Initializable {
                 txtName.setText(c.getCustomer_Name());
                 txtTPNo.setText(c.getCustomer_TpNo() + "");
                 txtAddress.setText(c.getCustomer_Address());
+                txtEmail.setText(c.getCustomer_Email());
 
             }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -220,7 +228,9 @@ public class CustomerFormController implements Initializable {
             String customer_Name = txtName.getText();
             int customer_TpNo = Integer.parseInt(txtTPNo.getText());
             String customer_Address = txtAddress.getText();
-            Customer c = new Customer(customer_Id, customer_Name, customer_TpNo, customer_Address);
+            String customer_Email = txtEmail.getText();
+            
+            Customer c = new Customer(customer_Id, customer_Name, customer_TpNo, customer_Address, customer_Email);
             int i = CustomerController.updateCustomer(c);
             if (i > 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -261,6 +271,7 @@ public class CustomerFormController implements Initializable {
             tblName.setCellValueFactory(new PropertyValueFactory<CustomerTableModel, String>("customer_Name"));
             tblTpNo.setCellValueFactory(new PropertyValueFactory<CustomerTableModel, Integer>("customer_TpNo"));
             tblAddress.setCellValueFactory(new PropertyValueFactory<CustomerTableModel, String>("customer_Address"));
+            //tblEmail.setCellValueFactory(new PropertyValueFactory<CustomerTableModel, String>("customer_Email"));
 
             tblCustomer.setItems(data);
             ArrayList<Customer> customers = null;
@@ -271,6 +282,7 @@ public class CustomerFormController implements Initializable {
                 ctm.setCustomer_Name(customer.getCustomer_Name());
                 ctm.setCustomer_TpNo(customer.getCustomer_TpNo());
                 ctm.setCustomer_Address(customer.getCustomer_Address());
+                ctm.setCustomer_Email(customer.getCustomer_Email());
 
                 data.add(ctm);
             }

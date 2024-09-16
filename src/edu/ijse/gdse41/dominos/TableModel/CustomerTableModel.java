@@ -18,6 +18,7 @@ public class CustomerTableModel {
     private SimpleStringProperty customer_Name = new SimpleStringProperty("");
     private SimpleIntegerProperty customer_TpNo = new SimpleIntegerProperty(0);
     private SimpleStringProperty customer_Address = new SimpleStringProperty("");
+    private SimpleStringProperty customer_Email = new SimpleStringProperty("");
     
 
     public CustomerTableModel() {
@@ -38,7 +39,10 @@ public class CustomerTableModel {
     public String getCustomer_Address() {
         return customer_Address.get();
     }
-
+    
+    public String getCustomer_Email() {
+        return customer_Email.get();
+    }
    
 
     public void setCustomer_Id(String customer_Id) {
@@ -55,6 +59,10 @@ public class CustomerTableModel {
 
     public void setCustomer_Address(String customer_Address) {
         this.customer_Address.set(customer_Address);
+    }
+    
+    public void setCustomer_Email(String customer_Email) {
+        this.customer_Email.set(customer_Email);
     }
 
 //    public void setItem_Code(String item_Code) {
